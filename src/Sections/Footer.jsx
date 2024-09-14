@@ -11,8 +11,8 @@ const Footer = () => {
             <img
               src={footerLogo}
               alt="Logo"
-              width={150}
-              height={46}
+              width={170}
+              height={56}
               className="m-0"
             />
           </a>
