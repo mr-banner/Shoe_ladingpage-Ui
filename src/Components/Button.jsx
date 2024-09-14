@@ -1,15 +1,19 @@
 import React from 'react'
 
-const Button = ({label,iconURL}) => {
+const Button = ({label,iconURL,backgroundColor,borderColor,textColor,fullWidth}) => {
   return (
-    <button className='flex justify-center gap-2 px-7 items-center bg-coral-red py-4 
-    font-montserrat leading-none text-lg text-white rounded-full border
-    border-coral-red hover:bg-white hover:text-black hover:shadow-2xl'>
+    <button
+      className={`flex justify-center items-center gap-2 px-7 py-4 border font-montserrat text-lg leading-none
+      ${
+        backgroundColor
+          ? `${backgroundColor} ${textColor} ${borderColor} hover:border-coral-red hover:text-black hover:shadow-xl`
+          : "bg-coral-red text-white border-coral-red hover:bg-white hover:text-black hover:shadow-3xl"
+      } rounded-full ${fullWidth && "w-full"}`}
+    >
         {label}
-
-        <img src={iconURL} alt='arrowRight'
+        {iconURL && <img src={iconURL} alt='arrowRight'
         className='ml-2 rounded-full w-5 h-5'
-        />
+        />}
     </button>
   )
 }

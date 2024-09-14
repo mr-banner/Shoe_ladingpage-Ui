@@ -9,10 +9,10 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="flex xl:flex-row flex-col w-full p-2 min-h-screen max-container justify-center gap-10"
+      className="flex xl:flex-row flex-col w-full min-h-screen max-container justify-center gap-10"
     >
-      <div className="relative xl:w-2/5 flex flex-col justify-center items-start w-full max-lg:padding-x pt-28">
-        <p className="text-xl text-coral-red">Our Summer Collections</p>
+      <div className="relative xl:w-2/5 flex flex-col justify-center items-start w-full max-xl:padding-x pt-28">
+        <p className="text-xl font-montserrat text-coral-red">Our Summer Collections</p>
         <h1 className="text-8xl max-sm:text-[55px] max-sm:leading-[62px] mt-10 font-bold font-palanquin">
           <span className="xl:bg-white xl:whitespace-nowrap relative xl:z-10 pr-10">
             The New Arrival
@@ -36,15 +36,16 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="flex relative flex-1 justify-center items-center max-sm:min-h-[200%] xl:min-h-screen bg-hero bg-cover bg-center bg-primary">
+      <div className="flex relative flex-1 justify-center items-center md:py-16 max-sm:py-4 xl:min-h-screen bg-hero bg-cover bg-center bg-primary">
           <img src={bigShoeImg} 
-          width={550}
+          width={610}
+          height={502}
           alt="Shoe Collection" 
           className="relative z-10 top-0 object-contain" />
 
-        <div className="flex absolute justify-center items-center sm:gap-6 gap-4 -bottom-[10%] max-sm:px-6 sm:left-[10%] max-sm:-bottom-[22%] max-sm:left-[18%]">
-        {shoes.map((shoe)=>(
-          <div key={shoe}>
+        <div className="flex absolute justify-center items-center sm:gap-6 gap-4 lg:-bottom-[14%] max-sm:hidden max-sm:px-6 lg:left-[16%] max-sm:-bottom-[22%] md:-bottom-[20%] md:left-[5%] max-sm:left-[18%]">
+        {shoes.map((shoe,index)=>(
+          <div key={index}>
           <ShoeCard
           imgURL = {shoe}
           changeBigShoeImage = {(shoe) => {setBigShoeImg(shoe)}}
